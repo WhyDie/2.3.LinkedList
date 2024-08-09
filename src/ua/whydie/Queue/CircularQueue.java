@@ -13,11 +13,11 @@ public class CircularQueue {
         Node newNode = new Node(data);
         if (front == null) {
             front = rear = newNode;
-            rear.next = front; // Замыкаем круг
+            rear.next = front; 
         } else {
             rear.next = newNode;
             rear = newNode;
-            rear.next = front; // Обновляем замыкание
+            rear.next = front;
         }
     }
 
@@ -28,14 +28,14 @@ public class CircularQueue {
         }
 
         int value;
-        if (front == rear) { // Если в очереди один элемент
+        if (front == rear) { 
             value = front.data;
             front = rear = null;
         } else {
             Node temp = front;
             value = temp.data;
             front = front.next;
-            rear.next = front; // Поддерживаем круговую структуру
+            rear.next = front;
         }
 
         return value;
